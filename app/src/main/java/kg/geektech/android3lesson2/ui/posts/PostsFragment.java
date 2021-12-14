@@ -84,7 +84,7 @@ public class PostsFragment extends Fragment {
 
         binding.recycler.setAdapter(adapter);
 
-        App.api.getPosts().enqueue(new Callback<List<Post>>() {
+        App.api.getPosts(FormFragment.GROUP_ID).enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
                 if (response.isSuccessful() && response.body() != null) {
